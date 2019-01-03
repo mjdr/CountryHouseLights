@@ -16,7 +16,7 @@ int main() {
 
 	usart_comm_init();
 	clock_init();
-	//relays_init();
+	relays_init();
 
 	//clock_set_time_ui();
 
@@ -24,10 +24,11 @@ int main() {
 	int cnt = 0;
 	while(1){
 		if(cnt > 0xfffff){
-			printf("Time: %lu\r\n", clock_get_raw_time());
+			clock_get_time_ui();
+			//printf("Time: %lu\r\n", clock_get_raw_time());
 			cnt = 0;
 		}
 		else cnt++;
-		//relays_update();
+		relays_update();
 	}
 }

@@ -56,7 +56,7 @@ all: CountryHouseLights.elf secondary-outputs
 CountryHouseLights.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU ARM Cross C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-move-loop-invariants -Werror -Wall -Wextra  -g3 -T "/home/jdr/eclipse-workspace/CountryHouseLights/ldscripts/stm32-h103.ld" -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -L/home/jdr/Projects/stm32/libopencm3-examples/libopencm3/lib -Wl,-Map,"CountryHouseLights.map" --specs=nano.specs --specs=nosys.specs -o "CountryHouseLights.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-move-loop-invariants -Werror -Wall -Wextra  -g3 -T "/home/jdr/eclipse-workspace/CountryHouseLights/ldscripts/stm32-h103.ld" -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -L/home/jdr/eclipse-workspace/libopencm3/lib -Wl,-Map,"CountryHouseLights.map" --specs=nano.specs --specs=nosys.specs -o "CountryHouseLights.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

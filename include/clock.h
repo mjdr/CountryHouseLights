@@ -7,7 +7,7 @@ typedef struct {
 	uint8_t minutes;
 	uint8_t hours;
 	uint8_t dayOfWeek;
-	uint8_t daysFromStart;
+	uint32_t raw;
 } __attribute__((packed)) clock_time_t;
 
 
